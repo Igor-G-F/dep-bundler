@@ -20,7 +20,7 @@ dependencies {
 gradlePlugin {
     plugins {
         create("depBundler") {
-            id = 'com.igorgf.dep-bundlesr'
+            id = 'com.igorgf.dep-bundler'
             implementationClass = 'com.igorgf.DependencyBundlerPlugin'
         }
     }
