@@ -98,7 +98,7 @@ plugins {
     id 'com.igorgf.dep-bundler'
 }
 
-depBundler.bundles = ['yourBundleName', 'yourOtherBundleName']
+dependencyBundles.bundles = ['yourBundleName', 'yourOtherBundleName']
 ```
 
 ---
@@ -156,7 +156,7 @@ You define the dependencies inside the bundle config without specifying the Vers
 The default catalog is `libs`. Override through `build.gradle`, 
 
 ```groovy
-depBundler.versionCatalogName = 'mylibs'
+dependencyBundles.versionCatalogName = 'mylibs'
 ```
 
 #### Declare Without Version Catalog
@@ -177,5 +177,5 @@ By default, the plugin expects the `dependency-bundles.toml` in the project root
 You can change the file location or name by configuring the following in your `build.gradle`,
 
 ```groovy
-depBundler.bundleConfigFilePath = 'mylibs'
+dependencyBundles.bundleConfigFilePath = 'mylibs'
 ```
