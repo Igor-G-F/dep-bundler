@@ -1,11 +1,12 @@
 plugins {
     id 'groovy'
     id 'java-gradle-plugin'
-    id 'maven-publish'
+    id 'com.vanniktech.maven.publish' version '0.30.0'
 }
 
-group = 'com.igorgf'
+group = 'io.github.igorgf'
 version = '1.0.0'
+description = 'Gradle Plugin for dependency bundling.'
 
 repositories {
     mavenCentral()
@@ -20,8 +21,8 @@ dependencies {
 gradlePlugin {
     plugins {
         create("depBundler") {
-            id = 'com.igorgf.dep-bundler'
-            implementationClass = 'com.igorgf.DependencyBundlerPlugin'
+            id = 'io.github.igor-g-f.dep-bundler'
+            implementationClass = 'io.github.igorgf.DependencyBundlerPlugin'
         }
     }
 }
@@ -30,4 +31,9 @@ publishing {
     repositories {
         mavenLocal()
     }
+}
+
+signing {
+    useGpgCmd()
+    sign publishing.publications
 }

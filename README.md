@@ -87,15 +87,13 @@ dependencyBundles.bundles = ['junit']
 
 ## Basic Configuration
 
-#### 1. Clone the plugin and build with: `./gradlew clean publishToMavenLocal`
+#### 1. Add the `dependency-bundles.toml` to your project root and configure your bundles
 
-#### 2. Add the `dependency-bundles.toml` to your project root and configure your bundles
-
-#### 2. Configure your `build.gradle` to apply teh dependency bundles
+#### 2. Configure your `build.gradle` to apply the dependency bundles
 
 ```groovy
 plugins {
-    id 'com.igorgf.dep-bundler'
+    id 'io.github.igor-g-f.dep-bundler' version '1.0.0'
 }
 
 dependencyBundles.bundles = ['yourBundleName', 'yourOtherBundleName']
@@ -178,4 +176,23 @@ You can change the file location or name by configuring the following in your `b
 
 ```groovy
 dependencyBundles.bundleConfigFilePath = 'mylibs'
+```
+
+---
+
+## Plugin Publishing
+
+Following environment variables must be configured to publish the plugin.
+
+```bash
+SIGNING_KEY=Your PGP signing key
+SIGNING_PASSWORD=Your PGP signing password
+ORG_GRADLE_PROJECT_mavenCentralUsername=Your maven central user key
+ORG_GRADLE_PROJECT_mavenCentralPassword=Your maven central user password key
+```
+
+To publish run:
+
+```bash
+./gradlew publishAllPublicationsToMavenCentralRepository
 ```

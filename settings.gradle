@@ -1,2 +1,4 @@
 rootProject.name = 'dep-bundler'
 
+System.setProperty("signing.keyId", System.getenv("SIGNING_KEY"))
+System.setProperty("signing.password", System.getenv("SIGNING_PASSWORD"))

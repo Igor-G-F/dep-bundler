@@ -1,4 +1,4 @@
-package com.igorgf
+package io.github.igorgf
 
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
