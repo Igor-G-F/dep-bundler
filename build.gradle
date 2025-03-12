@@ -4,16 +4,15 @@ plugins {
     id 'com.vanniktech.maven.publish' version '0.30.0'
 }
 
-group = 'io.github.igorgf'
-version = '1.0.0'
-description = 'Gradle Plugin for dependency bundling.'
+group = "${project.properties.GROUP}"
+version = "${project.properties.VERSION_NAME}"
+description = "${project.properties.POM_DESCRIPTION}"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.tomlj:tomlj:1.1.1'
     implementation gradleApi()
     implementation localGroovy()
 }
@@ -21,7 +20,7 @@ dependencies {
 gradlePlugin {
     plugins {
         create("depBundler") {
-            id = 'io.github.igor-g-f.dep-bundler'
+            id = "${project.properties.GROUP}.${project.properties.POM_ARTIFACT_ID}"
             implementationClass = 'io.github.igorgf.DependencyBundlerPlugin'
         }
     }
