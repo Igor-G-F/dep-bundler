@@ -140,6 +140,10 @@ applyBundle "test" // can be called outside of the `dependencies {}` block, but 
 
 ## Plugin Publishing
 
+This plugin is published to maven central, see: https://central.sonatype.com/artifact/io.github.igor-g-f/dep-bundler
+
+### Publishing Instructions
+
 Following environment variables must be configured to publish the plugin.
 
 ```bash
